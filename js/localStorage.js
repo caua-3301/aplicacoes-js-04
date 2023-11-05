@@ -1,11 +1,13 @@
 //Modulo voltado para o uso do local storage
+import { atualizarExibicao } from "./index.js";
 
 let minhaLista = [];
 
 //Como a variável será utilizada em outros modulos, aqui vai uma função que a atualiza
 const atualizarArray = (novoArray) => {
     minhaLista = novoArray;
-    atualizarLocalStorage()
+    atualizarLocalStorage();
+    atualizarExibicao();
 }
 
 //Verificando se já existe uma lista no localStorage

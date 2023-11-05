@@ -29,8 +29,9 @@ body {
 /*Primeiro contaiener da pagina*/
 .container:nth-child(1) {
     width: 370px;
+    margin: auto;
     height: 310px;
-    margin-bottom: 80px;
+    margin: 30px auto 60px auto;
 }
 
 .container:nth-child(2) {
@@ -91,15 +92,12 @@ body {
     transition: .8s;
 }
 
-#existente {
-    margin-bottom: 50px;
-}
-
 button {
     background-color: transparent;
     border: none;
 }
 
+/*Ajustes nos icones importados*/
 body>i:first-of-type {
     margin-left: 20px;
     position: absolute;
@@ -111,12 +109,14 @@ body>i:first-of-type {
     border-radius: 50%;
 }
 
+/*Section que armazena os dados ja cadastados*/
 #dados-existentes {
     width: 95%;
     padding: 0 5px;
     border-top-left-radius: 10px;
 }
 
+/*Tabela de exibição dos dados cadastrados*/
 table {
     width: 95%;
     margin: auto;
@@ -136,14 +136,13 @@ tbody {
 }
 
 td {
+    position: relative;
     border: 1px solid rgb(43, 43, 43);
     height: 25px;
 }
+/*Fim estilo tabela*/
 
-.mycheck {
-    text-align: center;
-}
-
+/*Botão que remove um item*/
 .remove-bottom {
     cursor: pointer;
     text-align: center;
@@ -152,13 +151,56 @@ td {
     border-radius: 20px;
 }
 
+/*Animação no botão de remoção*/
 .remove-bottom:hover {
     background-color: rgb(46, 46, 46);
     color: rgb(255, 255, 255);
     transition: all .5s;
 }
 
+/*Classe atribuida para itens que forem marcados como comprei*/
 .comprei{
     text-decoration: line-through;
-    background-color: brown;
+    background-color: rgb(187, 223, 197);
+}
+
+/*Botão de check quando marcado*/
+.check {
+    text-align: center;
+    background-color: rgb(71, 165, 99);
+    border: 1px solid rgb(0, 0, 0);
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    margin: 2px 0 0 43px;
+    padding: 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/*Botão de check quando desmarcado*/
+.no-check{
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    margin: 2px 0 0 43px;
+    padding: 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/*Estiização geral para os checkbox*/
+input[type="checkbox"] {
+    cursor: pointer;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 45%;
+    top: 23%;
+    width: 18px;
+    height: 18px;
 }

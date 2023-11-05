@@ -1,4 +1,5 @@
-import { minhaLista, atualizarArray, pegarDoLocalStorage} from "./localStorage.js";
+import {atualizarArray, pegarDoLocalStorage} from "./localStorage.js";
+import { atualizarExibicao } from "./index.js";
 
 //Operações que seão realizadas no que diz respeito as listas
 const adicionarItem = (novoItem) => {
@@ -6,34 +7,42 @@ const adicionarItem = (novoItem) => {
     atualizarArray(novoArray);
 }
 
-const removerItem = ({nome}) => {
-    console.log("jdhbvfdkfmhdglf")
-    const novoArray = pegarDoLocalStorage().filter(item => item.codigoBarras != codigoBarras);
+//Rmovendo item da lsita
+const removerItem = (hash) => {
+    const novoArray = pegarDoLocalStorage().filter((objeto) => objeto.hash !== hash);
+    console.log(novoArray)
     atualizarArray(novoArray);
+    atualizarExibicao();
 }
 
-const marcarItem = (item) => {
-    const novoArray = pegarDoLocalStorage().map((itens) => {
-        if (itens = item ){
-            itens.comprado == true;
-        }
-    })
+//Marcando um item de compra
+const marcarItem = (hash) => {
+    const items = pegarDoLocalStorage();
 
-    atualizarArray(novoArray);
+    items.forEach((item) => {
+      if (item.hash === hash) {
+        item.comprado = true;
+      }
+    });
+  
+    atualizarArray(items);
 }
 
-const desmarcarItem = (item) => {
-    const novoArray = pegarDoLocalStorage().map((itens) => {
-        if (itens = item ){
-            itens.comprado == false;
-        }
-    })
+//Desmarcando um item de compra
+const desmarcarItem = (hash) => {
+    const items = pegarDoLocalStorage();
 
-    atualizarArray(novoArray);
+    items.forEach((item) => {
+      if (item.hash === hash) {
+        item.comprado = false;
+      }
+    });
+  
+    atualizarArray(items);
 }
 
 const listarItens = () => {
     return pegarDoLocalStorage();
 }
 
-export {adicionarItem, listarItens, removerItem}
+export {adicionarItem, listarItens, removerItem, marcarItem, desmarcarItem}
