@@ -37,7 +37,7 @@ body {
 .container:nth-child(2) {
     overflow-y: scroll;
     margin-bottom: 80px;
-    width: 580px;
+    width: 600px;
 }
 
 /*Logo do calendario importada*/
@@ -140,6 +140,7 @@ td {
     border: 1px solid rgb(43, 43, 43);
     height: 25px;
 }
+
 /*Fim estilo tabela*/
 
 /*Botão que remove um item*/
@@ -159,7 +160,7 @@ td {
 }
 
 /*Classe atribuida para itens que forem marcados como comprei*/
-.comprei{
+.comprei {
     text-decoration: line-through;
     background-color: rgb(187, 223, 197);
 }
@@ -179,7 +180,7 @@ td {
 }
 
 /*Botão de check quando desmarcado*/
-.no-check{
+.no-check {
     text-align: center;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(0, 0, 0);
@@ -203,4 +204,38 @@ input[type="checkbox"] {
     top: 23%;
     width: 18px;
     height: 18px;
+}
+
+@media (min-width: 300px) and (max-width:700px) {
+
+    .container:nth-child(2) {
+        overflow-y: scroll;
+        margin-bottom: 80px;
+        width: 95%;
+    }
+
+    /*Tabela de exibição dos dados cadastrados*/
+    table {
+        width: 98%;
+    }
+
+    thead {
+        font-size: .85em;
+    }
+
+    tbody {
+        font-size: .8em;
+    }
+
+    /*Fim estilo tabela*/
+
+    .check {
+        margin: 2px 0 0 40%;
+    }
+
+    /*Botão de check quando desmarcado*/
+    .no-check {
+        margin: 2px 0 0 40%;
+    }
+
 }
